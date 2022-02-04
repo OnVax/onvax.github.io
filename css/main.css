@@ -80,4 +80,9 @@ main li small {
 .btn {
   text-transform: uppercase;
 }
+
+.optional {
+  padding-top: 50px;
+  text-decoration: underline;
+}
 /*# sourceMappingURL=main.css.map */
