@@ -36,7 +36,7 @@ header .author {
   position: absolute;
   margin: 5px;
   font-size: 15px;
-  text-transform: uppercase;
+  text-transform: lowercase;
   left: 55%;
 }
 
@@ -48,8 +48,7 @@ header .author {
 }
 
 footer {
-  position: absolute;
-  bottom: 2%;
+  padding-top: 30px;
   width: 100%;
   text-align: center;
 }
@@ -57,7 +56,6 @@ footer {
 footer .copyright {
   color: grey;
   font-size: 10px;
-  text-transform: uppercase;
 }
 
 main {
@@ -83,6 +81,5 @@ main li small {
 
 .optional {
   padding-top: 50px;
-  text-decoration: underline;
 }
 /*# sourceMappingURL=main.css.map */
