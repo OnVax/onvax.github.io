@@ -64,20 +64,20 @@ main {
   margin-top: 50px;
 }
 
-main li {
+main p {
   list-style-type: none;
   font-size: 20px;
   text-transform: uppercase;
   margin: 10px;
 }
 
-main li small {
-  font-size: 10px;
-}
-
-main li a {
+main p a {
   font-size: 48px;
   text-decoration: none;
+}
+
+main .comment {
+  font-size: 10px;
 }
 
 .btn {

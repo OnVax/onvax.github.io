@@ -49,18 +49,18 @@ main {
 	color: white;
 	text-align: center;
 	margin-top: 50px;
-	li {
+	p {
 		list-style-type: none;
 		font-size: 20px;
 		text-transform: uppercase;
 		margin: 10px;
-		small {
-			font-size: 10px;
-		}
-		a{
+		a {
 			font-size: 48px;
 			text-decoration: none;
 		}
+	}
+	.comment {
+		font-size: 10px;
 	}
 }
 .btn {
