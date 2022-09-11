@@ -1,101 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>FlowHelper</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>FlowHelper</title>
 </head>
+
 <body>
-    <header>
-        <h1>FlowHelper</h1>
-    </header>
+  <header>
+    <p class="title">FlowHelper</p>
+    <p class="author">by strpatry</p>
+    <div class="underline"></div>
+  </header>
+
+  <div class="buttons">
     <div>
-        <label for="startDate">Start date:</label>
-        <input type="Date" id="startDate" name="Date"> 
-        <label for="endDate">End date:</label>
-        <input type="Date" id="endDate" name="Date"> 
+      <label for="startDate">Start date:</label>
+      <input type="Date" id="startDate" name="Date">
+      <label for="endDate">End date:</label>
+      <input type="Date" id="endDate" name="Date">
     </div>
     <div>
-        <label for="startHourIntraday">Start time:</label>
-        <select id="startHourIntraday" name="startHourIntraday">
+      <label for="startHourIntraday">Start time:</label>
+      <select id="startHourIntraday" name="startHourIntraday">
 
-            <option value="6">06</option>
-            <option value="17">17</option>
-        </select>
-        <span>:</span>
-        <select id="startMinuteIntraday" name="startMinuteIntraday">
-            <option value="0">00</option>
-            <option value="30">30</option>
-        </select>
-        <label for="endHourIntraday">End time:</label>
-        <select id="endHourIntraday" name="endHourIntraday">
-            <option value="4">04</option>
-            <option value="16">16</option>
-        </select>
-        <span>:</span>
-        <select id="endMinuteIntraday" name="endMinuteIntraday">
-            <option value="0">00</option>
-            <option value="30">30</option>
-        </select>
+        <option value="6">06</option>
+        <option value="17">17</option>
+      </select>
+      <span>:</span>
+      <select id="startMinuteIntraday" name="startMinuteIntraday">
+        <option value="0">00</option>
+        <option value="30">30</option>
+      </select>
+      <label for="endHourIntraday">End time:</label>
+      <select id="endHourIntraday" name="endHourIntraday">
+        <option value="4">04</option>
+        <option value="16">16</option>
+      </select>
+      <span>:</span>
+      <select id="endMinuteIntraday" name="endMinuteIntraday">
+        <option value="0">00</option>
+        <option value="30">30</option>
+      </select>
     </div>
     <button id="startButton">RUN!</button>
     <button id="qTasker">qTasker</button>
+  </div>
+  <div class="wrapper">
+    <table class="tg, table1">
+      <thead>
+        <tr>
+          <th class="tg-c3ow" colspan="2">GOAL</th>
+          <th id="aaNumber" class="tg-c3ow" colspan="2">AA Number in Process:</th>
+          <th class="tg-c3ow" colspan="2">Results</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="remainingGoal" class="tg-c3ow" colspan="2">0</td>
+          <td class="tg-c3ow" colspan="2">Goal/Hours</td>
+          <td id="resultGoal" class="tg-c3ow" colspan="2">0</td>
+        </tr>
+        <tr>
+          <td class="tg-c3ow, halve_cell">Total</td>
+          <td class="tg-c3ow">Week 5+</td>
+          <td class="tg-c3ow" colspan="2" rowspan="2">(UPH)Process Large<br></td>
+          <td class="tg-c3ow, halve_cell">Total</td>
+          <td class="tg-c3ow">Week 5+</td>
+        </tr>
+        <tr>
+          <td id="totalRateExpected" class="tg-c3ow">0.00</td>
+          <td id="week5RateExpected" class="tg-c3ow">20.50</td>
+          <td id="totalRate" class="tg-c3ow">0</td>
+          <td id="week5Rate" class="tg-c3ow">0</td>
+        </tr>
+        <tr>
+          <td id="tphTotalExpected" class="tg-c3ow" colspan="2">0.00</td>
+          <td class="tg-c3ow" colspan="2">(TPH)Total</td>
+          <td id="tphTotal" class="tg-c3ow" colspan="2">0</td>
+        </tr>
+        <tr>
+          <td class="tg-c3ow">PPR</td>
+          <td class="tg-c3ow">SHIFT</td>
+          <td class="tg-c3ow" colspan="2" rowspan="2">(TPH)Support</td>
+          <td id="tphSupport" class="tg-c3ow" colspan="2" rowspan="2">0</td>
+        </tr>
+        <tr>
+          <td id="tphPPRExpected" class="tg-c3ow">0</td>
+          <td id="tphShiftExpected" class="tg-c3ow">0</td>
+        </tr>
+        <tr>
+          <td id="uphExpected" class="tg-c3ow" colspan="2">0</td>
+          <td class="tg-c3ow" colspan="2">Units per Hour</td>
+          <td id="uphTotal" class="tg-c3ow" colspan="2">0</td>
+        </tr>
+        <tr>
+          <td id="percentageExpected" class="tg-c3ow" colspan="2">00.00%</td>
+          <td class="tg-c3ow" colspan="2">Current vs Expected Result</td>
+          <td id="percentageTotal" class="tg-c3ow" colspan="2">00.00%</td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="table2">
+      <thead>
+        <tr>
+          <th class="tg-c3ow">Flow</th>
+          <th class="tg-c3ow">AA Number</th>
+          <th class="tg-c3ow">Current TPH/UPH</th>
+        </tr>
+        <tr>
+          <td>Line 1</td>
+          <td>0 + 0</td>
+          <td>0.00</td>
+        </tr>
+        <tr>
+          <td>Line 2</td>
+          <td>0 + 0</td>
+          <td>0.00</td>
+        </tr>
+        <tr>
+          <td>Line 3</td>
+          <td>0 + 0</td>
+          <td>0.00</td>
+        </tr>
+        <tr>
+          <td>Audit</td>
+          <td>0 + 0</td>
+          <td>0.00</td>
+        </tr>
+        <tr>
+          <td>Problem Solve</td>
+          <td>0 + 0</td>
+          <td>0.00</td>
+        </tr>
+        <tr>
+          <td>Exception</td>
+          <td>0</td>
+          <td>0.00</td>
+        </tr>
+        <tr>
+          <td>Dock</td>
+          <td>0 + 0</td>
+          <td>0.00</td>
+        </tr>
+        <tr>
+          <td>Buffers</td>
+          <td>0</td>
+          <td>0.00</td>
+        </tr>
+        <tr>
+          <td>Heat Gun</td>
+          <td>0</td>
+          <td>0.00</td>
+        </tr>
+        <tr>
+          <td rowspan="2">TeamLift</td>
+          <td rowspan="2">0</td>
+          <td>CR / TOTAL / WHD</td>
+        </tr>
+        <tr>
+          <td>0.00 / 0.00 / 0.00</td>
+        </tr>
+        <tr>
+          <td>Szkło / Ostre</td>
+          <td>0</td>
+          <td>0.00</td>
+        </tr>
+        <tr>
+          <td>SeSo</td>
+          <td>0</td>
+          <td>0.00</td>
+        </tr>
+        <tr>
+          <td>Mały Sort</td>
+          <td>0</td>
+          <td>0.00</td>
+        </tr>
+        <tr>
+          <td>Audio</td>
+          <td>0</td>
+          <td>0.00</td>
+        </tr>
+        <tr>
+          <td>Konsole</td>
+          <td>0</td>
+          <td>0.00</td>
+        </tr>
+        <tr>
+          <td>Klawiatury</td>
+          <td>0</td>
+          <td>0.00</td>
+        </tr>
+      </thead>
+      <tbody>
 
-    <table class="tg">
-        <thead>
-          <tr>
-            <th class="tg-c3ow" colspan="2">GOAL</th>
-            <th id="aaNumber" class="tg-c3ow" colspan="2">AA Number in Process:</th>
-            <th class="tg-c3ow" colspan="2">Results</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td id="remainingGoal" class="tg-c3ow" colspan="2">0</td>
-            <td class="tg-c3ow" colspan="2">Goal/Hours</td>
-            <td id="resultGoal" class="tg-c3ow" colspan="2">0</td>
-          </tr>
-          <tr>
-            <td class="tg-c3ow">Total</td>
-            <td class="tg-c3ow">Week 5+</td>
-            <td class="tg-c3ow" colspan="2" rowspan="2">(UPH)Process Large<br></td>
-            <td class="tg-c3ow">Total</td>
-            <td class="tg-c3ow">Week 5+</td>
-          </tr>
-          <tr>
-            <td id="totalRateExpected" class="tg-c3ow">0.00</td>
-            <td id="week5RateExpected" class="tg-c3ow">20.50</td>
-            <td id="totalRate" class="tg-c3ow">0</td>
-            <td id="week5Rate" class="tg-c3ow">0</td>
-          </tr>
-          <tr>
-            <td id="tphTotalExpected" class="tg-c3ow" colspan="2">0.00</td>
-            <td class="tg-c3ow" colspan="2">(TPH)Total</td>
-            <td id="tphTotal" class="tg-c3ow" colspan="2">0</td>
-          </tr>
-          <tr>
-            <td class="tg-c3ow">PPR</td>
-            <td class="tg-c3ow">SHIFT</td>
-            <td class="tg-c3ow" colspan="2" rowspan="2">(TPH)Support</td>
-            <td id="tphSupport" class="tg-c3ow" colspan="2" rowspan="2">0</td>
-          </tr>
-          <tr>
-            <td id="tphPPRExpected" class="tg-c3ow">0</td>
-            <td id="tphShiftExpected" class="tg-c3ow">0</td>
-          </tr>
-          <tr>
-            <td id="uphExpected" class="tg-c3ow" colspan="2">0</td>
-            <td class="tg-c3ow" colspan="2">Units per Hour</td>
-            <td id="uphTotal" class="tg-c3ow" colspan="2">0</td>
-          </tr>
-          <tr>
-            <td id="percentageExpected" class="tg-c3ow" colspan="2">00.00%</td>
-            <td class="tg-c3ow" colspan="2">Current vs Expected Result</td>
-            <td id="percentageTotal" class="tg-c3ow" colspan="2">00.00%</td>
-          </tr>
-        </tbody>
-        </table>
+      </tbody>
+    </table>
+  </div>
+  <footer>
+    <div class="underline"></div>
+    <p class="copyright">Patryk Strzelczyk - strpatry © 2022</p>
+  </footer>
 </body>
+
 </html>

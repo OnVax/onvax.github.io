@@ -1,21 +1,15 @@
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  font-family: 'Montserrat', sans-serif;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
   background-color: #333;
 }
 
@@ -26,12 +20,10 @@ header {
   font-weight: bold;
   color: white;
 }
-
 header .title {
   font-size: 48px;
   margin: 0;
 }
-
 header .author {
   position: absolute;
   margin: 5px;
@@ -52,7 +44,6 @@ footer {
   width: 100%;
   text-align: center;
 }
-
 footer .copyright {
   color: grey;
   font-size: 10px;
@@ -63,19 +54,16 @@ main {
   text-align: center;
   margin-top: 50px;
 }
-
 main p {
   list-style-type: none;
   font-size: 20px;
   text-transform: uppercase;
   margin: 10px;
 }
-
 main p a {
   font-size: 48px;
   text-decoration: none;
 }
-
 main .comment {
   font-size: 10px;
 }
@@ -86,5 +74,4 @@ main .comment {
 
 .optional {
   padding-top: 50px;
-}
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
