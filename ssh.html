@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SSH Connection</title>
+</head>
+<body>
+  <h1>SSH Connection</h1>
+  <button onclick="connectSSH()">Connect SSH</button>
+  <pre id="ssh_output"></pre>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ssh2/1.4.0/ssh2.min.js"></script>
+  <script>
+    function connectSSH() {
+      const ssh = new SSH2Client();
+      const sshOutput = document.getElementById('ssh_output');
+
+      ssh.on('ready', function() {
+        ssh.exec('echo "SSH connection successful"', function(err, stream) {
+          if (err) throw err;
+          stream.on('close', function(code, signal) {
+            ssh.end();
+          }).on('data', function(data) {
+            sshOutput.textContent += data.toString();
+          }).stderr.on('data', function(data) {
+            sshOutput.textContent += data.toString();
+          });
+        });
+      }).connect({
+        host: srv21.mikr.us,
+        port: 10248,
+        username: 'root',
+        password: 'KegkghRrb8'
+      });
+    }
+  </script>
+</body>
+</html>
